@@ -1,0 +1,16 @@
+apply plugin: 'java'
+
+ext{
+    renjinVersion = '0.9.2626'
+}
+
+logger.lifecycle("Building with Renjin $renjinVersion")
+
+repositories {
+    maven { url "https://nexus.bedatadriven.com/content/groups/public" }
+}
+
+dependencies {
+    compile "org.renjin:renjin-script-engine:$renjinVersion"
+    testCompile 'junit:junit:4.12'
+}
